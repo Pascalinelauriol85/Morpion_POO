@@ -11,6 +11,7 @@ class Game
     @board = Board.new 
   end
   
+  # Début du jeu avec l'identité des joueurs
   def players()
     2.times do |i|
       puts "---------------------------------------"
@@ -26,6 +27,7 @@ class Game
     end
   end
 
+# détermine si la partie est nulle ou si elle terminée
   def choose_case(player)
     @board.play_turn(player)
     @board.game_nil
@@ -42,6 +44,7 @@ class Game
     end
   end
 
+  # continue le jeu tant qu'on a pas atteind 9, et tant qu'on est dans le jeu 
   def game_round
     while @board.winner == false 
       choose_case(@player_array[0])
@@ -56,6 +59,7 @@ class Game
     end
   end
 
+  # remet a zero la partie sans redemander le nom et affiche le score 
   def restart
     puts "SCORE #{@player_array[0].player} - #{@player_array[0].score} points"
     puts "SCORE #{@player_array[1].player} - #{@player_array[1].score} points"
@@ -73,11 +77,12 @@ class Game
     end
   end
 
+  # début de la partie
   def start 
     puts ""
     puts "\033[3;35m---------------------------------------"
     puts "            Welcome to "
-    puts "         The Morpion Game         "
+    puts "   🔥     The Morpion Game    🔥        "
     puts "---------------------------------------"+"\033[0m"
     puts "created by Xabi Antho & Pascaline  😜  🤟  "
   end

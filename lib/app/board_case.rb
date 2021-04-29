@@ -8,6 +8,7 @@ class BoardCase
      @position = position
    end
  
+   
    def player_choice(new_pawn)
        @case = new_pawn
    end
